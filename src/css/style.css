@@ -1,0 +1,135 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #107ABB;
+}
+
+.board {
+    display: flex;
+    align-items: flex-start;
+    gap: 1%;
+    width: 96%;
+    margin: 50px 2%;
+}
+
+.board-column {
+    flex-basis: 32%;
+    background: #DEE2E5;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.board-column-title {
+    padding: 10px;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.board-column-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.board-column-menu-add_button, .board-column-menu-add-confirm_button, .board-column-menu-add-reject_button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.board-column-menu-add_button {
+    font-size: 16px;
+    color: #5a5c5e;
+}
+
+.board-column-menu-add-confirm_button {
+    background: green;
+    color: white;
+    border-radius: 3px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.board-column-menu-add-reject_button {
+    background: transparent;
+    color: #5a5c5e;
+    font-size: 25px;
+    padding: 0;
+}
+
+.board-card-container, .board-card-placeholder {
+    margin: 10px 0;
+    border-radius: 5px;
+    background: white;
+}
+
+.board-card-placeholder {
+    background: #d1d1d1;
+}
+
+.board-card.editable .board-card-content {
+    min-height: 50px;
+}
+
+.board-card-content {    
+    padding: 10px;
+}
+
+.board-card.editable:hover .board-card-remove_button {
+    display: none
+}
+
+.board-card-container {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.board-card {
+    box-sizing: border-box;
+}
+
+.board-card:hover .board-card-remove_button {
+    display: block;
+}
+
+.board-card-container.dragged {
+    position: absolute;
+    margin: 0;
+    z-index: 1000;
+    transform: rotate(2deg);
+}
+
+.board-card-container.dragged .board-card-remove_button {
+    display: none;
+}
+
+.board-card-remove_button {
+    display: none;
+    position: absolute;
+    background: rgb(222, 222, 222);
+    color: rgb(118, 118, 118);
+    top: 5px;
+    right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0;
+    font-size: 12px;
+    padding: 6px 10px;
+}
+
+.dragging * {    
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.dragging {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
